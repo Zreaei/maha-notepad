@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\{
+    Admin\AdminNoteController,
+    User\UserNoteController
+};
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +22,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function() {
-    return view('test');
+// Login - Register
+Route::controller(LoginController::class)->group(function(){
+    // 
+});
+
+// Logout
+
+// Admin
+Route::controller(AdminNoteController::class)->group(function(){
+    // 
+});
+
+// User
+Route::controller(UserNoteController::class)->group(function(){
+    // 
 });
